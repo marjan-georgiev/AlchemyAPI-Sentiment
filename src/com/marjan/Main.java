@@ -1,20 +1,12 @@
 package com.marjan;
 
 import com.alchemyapi.api.AlchemyAPI;
-import com.alchemyapi.api.*;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPathExpressionException;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.StringWriter;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -34,6 +26,7 @@ public class Main {
         // parse XML result
         String sentiment = doc.getElementsByTagName("type").item(0).getTextContent();
         String score = doc.getElementsByTagName("score").item(0).getTextContent();
+
         // print results
         System.out.println("Sentiment: " + sentiment);
         System.out.println("Score: " + score);
